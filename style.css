@@ -1,0 +1,193 @@
+
+body{
+  margin:0;
+  font-family:'Shrikhand', cursive;
+  color:#e7dfd8;           
+  background:black;       
+}
+
+
+.hero{
+  position:relative;
+  min-height:100vh;
+  background-image: url('image-hero.jpg');
+  background-size: cover;   
+  background-position: center;
+  padding-top:100px;    
+}
+
+
+#nav{
+  position:absolute;
+  top:20px; left:0; right:0;
+  margin:0; padding:0;
+  list-style:none;
+  text-align:center;
+  z-index:10;
+}
+#nav li{ 
+    display:inline-block; 
+    margin:0 18px; 
+}
+#nav a{
+  color:#e7dfd8;
+  text-decoration:none;
+  padding:6px 8px;
+}
+#nav a:hover{ 
+    color:#c1ff72; 
+}   
+
+
+.hero-content{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:0 20px;
+  padding-top: 100px
+}
+.brand{ margin:0 0 8px; 
+    font-size:64px; 
+    text-transform:uppercase; 
+    color:#e7dfd8; }
+.tagline{ 
+    margin:0 0 10px; 
+    color:#c1ff72; 
+    font-size:24px; 
+}
+.mission{ 
+    max-width:900px; 
+    margin:10px auto 0; 
+    font-size:14px; 
+    text-transform:uppercase; 
+    letter-spacing:.5px; 
+}
+
+.highlight{
+    color:#c1ff72; 
+}
+
+.page-content{
+  width:92%;
+  max-width:900px;          
+  margin:20px auto 0;
+  padding:16px;
+}
+
+.contact-form{
+  background:black;         
+  padding:20px;
+  border-radius:8px;
+  border:1px solid white;
+}
+.contact-form label{ 
+    display:block; 
+    margin:10px 0 6px; 
+}
+
+.contact-form input,
+.contact-form textarea{
+  width:100%;
+  padding:10px;
+  border:1px solid #c1ff72;
+  border-radius:6px;
+  background:white;
+  color:black;
+  font-family:'Shrikhand', cursive;
+}
+.contact-form textarea{ 
+    min-height:220px; 
+}
+.contact-form button{
+  margin-top:12px;
+  padding:10px 16px;
+  border:none;
+  border-radius:6px;
+  background:#c1ff72;
+  color:black;
+  cursor:pointer;
+}
+.contact-form button:hover{ 
+    background:#e7dfd8; 
+}
+
+
+.container{ 
+    width:92%; 
+    max-width:1100px; 
+    margin:20px auto; 
+}
+.products{
+display:flex;
+
+gap:16px;
+}
+.card{
+  background:black;
+  border:1px solid white;
+  border-radius:8px;
+  padding:12px;
+  text-align:center;
+}
+.card img{ 
+    width:100%; 
+    border-radius:6px; 
+    margin-bottom:8px; 
+}
+.card h3{ 
+    margin:6px 0 4px; 
+    font-size:20px; 
+    color:#e7dfd8; 
+}
+.desc{ 
+    font-size:14px; 
+    color:#e7dfd8; 
+}
+
+.price{ 
+    color:#c1ff72; 
+    font-size:18px; 
+}
+
+.sizes{ 
+    display:flex; 
+    justify-content:center; 
+    gap:8px; 
+}
+
+.sizes span{
+  padding:4px 10px;
+  border:1px solid #c1ff72;
+  color:#c1ff72;
+  border-radius:999px;
+  font-size:12px;
+}
+
+
+.footer{ 
+    position:absolute; 
+    left:20px; bottom:20px;
+     font-size:14px; 
+    }
+.social{ 
+    
+    display:flex; 
+    gap:12px; 
+    align-items:center;
+}
+.social a{
+    
+    color:#c1ff72; 
+   
+}
+.social a:hover{ 
+    color:#e7dfd8; 
+}
+
+
+@media (max-width:650px){
+  #nav li{ margin:0 10px; }
+  .brand{ font-size:42px; }
+}
