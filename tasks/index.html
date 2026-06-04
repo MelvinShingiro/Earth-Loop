@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Daily — Your day, organized</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="app.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div class="brand">
+        <span class="brand-icon" aria-hidden="true">☀</span>
+        <h1>Daily</h1>
+      </div>
+      <p class="greeting" id="greeting"></p>
+    </header>
+
+    <section class="date-bar" aria-label="Select day">
+      <button type="button" class="date-nav" id="prevDay" aria-label="Previous day">‹</button>
+      <div class="date-display">
+        <time id="selectedDate" datetime=""></time>
+        <button type="button" class="today-btn" id="goToday" hidden>Today</button>
+      </div>
+      <button type="button" class="date-nav" id="nextDay" aria-label="Next day">›</button>
+    </section>
+
+    <section class="progress-card" aria-live="polite">
+      <div class="progress-ring-wrap">
+        <svg class="progress-ring" viewBox="0 0 80 80" aria-hidden="true">
+          <circle class="progress-ring-bg" cx="40" cy="40" r="34"></circle>
+          <circle class="progress-ring-fill" id="progressRing" cx="40" cy="40" r="34"></circle>
+        </svg>
+        <span class="progress-percent" id="progressPercent">0%</span>
+      </div>
+      <div class="progress-text">
+        <strong id="progressLabel">0 of 0 done</strong>
+        <span id="progressHint">Add your first task below</span>
+      </div>
+    </section>
+
+    <form class="add-form" id="addForm">
+      <div class="add-row">
+        <input
+          type="text"
+          id="taskInput"
+          class="task-input"
+          placeholder="What needs to get done today?"
+          autocomplete="off"
+          maxlength="200"
+          required
+        >
+        <select id="prioritySelect" class="priority-select" aria-label="Priority">
+          <option value="low">Low</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High</option>
+        </select>
+        <button type="submit" class="add-btn">Add</button>
+      </div>
+    </form>
+
+    <div class="toolbar">
+      <div class="filters" role="tablist" aria-label="Filter tasks">
+        <button type="button" class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button type="button" class="filter-btn" data-filter="active" role="tab" aria-selected="false">Active</button>
+        <button type="button" class="filter-btn" data-filter="done" role="tab" aria-selected="false">Done</button>
+      </div>
+      <button type="button" class="clear-done" id="clearDone" hidden>Clear completed</button>
+    </div>
+
+    <ul class="task-list" id="taskList" aria-label="Tasks"></ul>
+
+  </div>
+
+  <template id="taskTemplate">
+    <li class="task-item" data-id="">
+      <label class="task-check">
+        <input type="checkbox" class="task-checkbox">
+        <span class="checkmark" aria-hidden="true"></span>
+      </label>
+      <div class="task-body">
+        <span class="task-title"></span>
+        <span class="task-priority" aria-hidden="true"></span>
+      </div>
+      <button type="button" class="task-delete" aria-label="Delete task">×</button>
+    </li>
+  </template>
+
+  <script src="app.js"></script>
+</body>
+</html>
